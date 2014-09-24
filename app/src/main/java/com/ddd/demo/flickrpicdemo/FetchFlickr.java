@@ -60,11 +60,14 @@ public class FetchFlickr {
     }
 
     public String[] getPicUrls() {
-        String requestUrl = Uri.parse(ENDPOINT).buildUpon()
-                .appendQueryParameter("method", METHOD_GET_RECENT)
-                .appendQueryParameter("api_key", API_KEY)
-                .appendQueryParameter(PARAM_EXTRAS, EXTRA_SMALL_URL)
-                .build().toString();
+        if (items.size() != 0){
+            items.clear();
+        }
+            String requestUrl = Uri.parse(ENDPOINT).buildUpon()
+                    .appendQueryParameter("method", METHOD_GET_RECENT)
+                    .appendQueryParameter("api_key", API_KEY)
+                    .appendQueryParameter(PARAM_EXTRAS, EXTRA_SMALL_URL)
+                    .build().toString();
         Log.d(TAG, "request url: " + requestUrl);
         try {
             String response = getXML(requestUrl);
