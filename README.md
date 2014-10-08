@@ -16,4 +16,3 @@ The follow list is the main point for android.
 
 4. How to use WebView to display a web page.
 
-next step TODO is add lstview display gallery and via setting to switch display style.
